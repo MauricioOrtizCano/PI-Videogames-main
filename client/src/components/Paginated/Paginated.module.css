@@ -1,0 +1,40 @@
+.paginated_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px;
+}
+
+.back_page,
+.forward_page {
+    background-color: rgba(0, 0, 0, 0.158);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back_page[disabled],
+.forward_page[disabled] {
+    cursor: no-drop; 
+}
+
+img {
+    width: 80%;
+}
+
+input {
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #421B40;
+    width: 55px;
+    height: 25px;
+}
+
+
