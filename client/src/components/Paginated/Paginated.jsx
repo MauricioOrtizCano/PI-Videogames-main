@@ -41,8 +41,8 @@ const Paginated = ({ page, setPage, max }) => {
             <button disabled={page === 1 || page < 1} className={style.back_page} onClick={previousPage}>
                 <img src={back} alt='back'/>
             </button>
-            <input onChange={e => onChange(e)} onKeyDown={(e) => onKeyDown(e)} name='pages' value={input} autoComplete='off'/>
-            <p>de {max}</p>
+            <input onChange={e => onChange(e)} onKeyDown={(e) => onKeyDown(e)} name='pages' value={input} autoComplete='off' className={style.input}/>
+            <p className={style.p}>de {max}</p>
             <button disabled={page === max || page > max} className={style.forward_page} onClick={nextPage}>
                 <img src={forward} alt='forward'/>
             </button>

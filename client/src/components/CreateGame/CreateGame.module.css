@@ -1,0 +1,116 @@
+.mayor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.fondo {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+}
+
+.container_creategame {
+    margin: 50px;
+    padding: 50px;
+    background: #5df3b073;
+    width: 60%;
+    border-radius: 32px;
+}
+
+.form_create {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+.label_container {
+    margin: 50px;
+}
+
+.names {
+    color: #c5ffe5;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.inputs_names {
+    border-radius: 10px;
+    border: 1px solid #008D4D;
+    width: 200px;
+    height: 25px;
+    color: black;
+}
+
+.inputs_description {
+    border-radius: 10px;
+    border: 1px solid #008D4D;
+    width: 250px;
+    height: 150px;
+    color: black;
+}
+
+.container_arrays {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.errors {
+    color: red;
+    font-size: 14px;
+}
+
+.button {
+    background: #5df3af;
+    color: #008D4D;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
+    transition: 3s;
+}
+
+.button:hover {
+    background: #a0ffd4;
+    padding: 13px;
+}
+
+.back_tohome {
+    background: #c4ffe5;
+    width: 250px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #008D4D;
+    border-radius: 35px;
+    transition: 3s;
+}
+
+.back_tohome:hover {
+    background-color: #008D4D;
+    box-shadow: 0 0 1rem rgb(2, 58, 30), 0 0 1rem rgb(2, 58, 30), 0 0 1rem rgb(2, 58, 30);
+}
+
+.link {
+    text-decoration: none;
+    font-size: 45px;
+    cursor: pointer;
+    margin-top: 15px;
+    color: #02502d;
+    font-weight: 600;
+    transition: 3s;
+}
+
+.link:hover {
+    color: #a0ffd4;
+}

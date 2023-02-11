@@ -21,7 +21,9 @@ const GameCard = (props) => {
             <NavLink to={`/videogame/${props.id}`} style={{textDecoration: 'none'}} id={props.id} onClick={handleOnClick}>
                 <div className={style.container_image}>
                     <p className={style.rating}>{props.rating}🟊</p>
-                    <img src={props.image} className={style.image_style} alt={props.name} />
+                    <div className={style.container_main_image}>
+                        <img src={props.image} className={style.image_style} alt={props.name} />
+                    </div>
                 </div>
 
                 <div className={style.container_name}>

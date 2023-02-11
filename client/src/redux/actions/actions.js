@@ -6,6 +6,9 @@ export const GET_VIDEOGAME_DETAIL = 'GET_VIDEOGAME_DETAIL';
 export const GET_GENRES = 'GET_GENRES';
 export const SEARCH_VIDEOGAME = 'SEARCH_VIDEOGAME';
 export const GET_ID = 'GET_ID';
+export const SORT_GAMES_BY_NAME = 'SORT_GAMES_BY_NAME';
+export const FILTER_BY_GENRES = 'FILTER_BY_GENRES';
+export const ORDER_BY_RATING = 'ORDER_BY_RATING';
 //export const CLEAN_UP = 'CLEAN_UP'
 
 
@@ -84,6 +87,31 @@ export const getID = (id) => {
     return ({
         type: GET_ID,
         payload: idToStr
+    })
+}
+
+
+export const sortGamesByName = (order) => {
+    //console.log(order)
+    return ({
+        type: SORT_GAMES_BY_NAME,
+        payload: order
+    })
+}
+
+
+export const filterByGenres = (array) => {
+    return ({
+        type: FILTER_BY_GENRES,
+        payload: array
+    })
+}
+
+
+export const orderByRating = (array) => {
+    return({
+        type: ORDER_BY_RATING,
+        payload: array
     })
 }
 

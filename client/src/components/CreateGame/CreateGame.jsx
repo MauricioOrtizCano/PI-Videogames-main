@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getGenres } from "../../redux/actions/actions";
 import axios from "axios";
+import style from './CreateGame.module.css';
+import screen from './FondoHome.png'
 
 
 const CreateGame = () => {
@@ -154,93 +156,121 @@ const CreateGame = () => {
             genres: [],
             platforms: []
         })
+
+
+        alert('The Game has been created successfully')
     }
 
     return(
-        <div>
-            <NavLink to='/home'>Home</NavLink>
-            <h1>Create Game</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Name: </label>
-                <input
-                type="text" 
-                name="name"
-                value={inputs.name}
-                onChange={handleInputs}
-                />
-                {errors.name ? <div>{errors.name}</div> : null}
-
-                <label>Description: </label>
-                <input 
-                type="text" 
-                name="description"
-                value={inputs.description}
-                onChange={handleInputs} 
-                />
-                {errors.description ? <div>{errors.description}</div> : null}
-
-                <label>Image: </label>
-                <input 
-                type="text" 
-                name="image"
-                value={inputs.image}
-                onChange={handleInputs} 
-                />
-                {errors.image ? <div>{errors.image}</div> : null}
-
-                <label>Released Date: </label>
-                <input 
-                type="date" 
-                name="released"
-                value={inputs.released}
-                onChange={handleInputs} 
-                />
-                <br></br>
-
-                <label>Rating: </label>
-                <input 
-                type="text" 
-                name="rating"
-                value={inputs.rating}
-                onChange={handleInputs} 
-                />
-                {errors.rating ? <div>{errors.rating}</div> : null}
-
-                <label>Genres: </label>
-                <div>
-                   {allGenres.map((g, index) => {
-                    return <div key={index}>
-                        <label>{g.name}</label>
-                        <input 
-                            key={g.id} 
-                            type="checkbox"
-                            value={g.id}
-                            name='genres'
-                            onClick={e => handleChecksGenres(e)}
-                        />
-                    </div>
-                   })} 
-                </div>
-                {errors.genres ? <div>{errors.genres}</div> : null}
-
-                <label>Platforms: </label>
-                <div>
-                   {allPlatforms.map((pt, index) => {
-                    return <div key={index}>
-                        <label>{pt}</label>
+        <div className={style.mayor}>
+            <img src={screen} alt='fondo' className={style.fondo}/>
+            <div className={style.container_creategame}>
+                
+                <h1>Create Game</h1>
+                <form onSubmit={handleSubmit} className={style.form_create}>
+                    <div className={style.label_container}>
+                        <label className={style.names}>Name: </label>
                         <input
-                            key={index} 
-                            type="checkbox"
-                            value={pt}
-                            name="platforms"
-                            onClick={e => handleChecksPlatforms(e)}
+                        className={style.inputs_names}
+                        type="text" 
+                        name="name"
+                        value={inputs.name}
+                        onChange={handleInputs}
+                        />
+                        {errors.name ? <div className={style.errors}>{errors.name}</div> : null}
+                    </div>
+
+                    <div className={style.label_container}>
+                        <label className={style.names}>Description: </label>
+                        <input
+                        className={style.inputs_description} 
+                        type="text" 
+                        name="description"
+                        value={inputs.description}
+                        onChange={handleInputs} 
+                        />
+                        {errors.description ? <div className={style.errors}>{errors.description}</div> : null}
+                    </div>
+
+                    <div className={style.label_container}>
+                        <label className={style.names}>Image: </label>
+                        <input
+                        className={style.inputs_names}
+                        type="text" 
+                        name="image"
+                        value={inputs.image}
+                        onChange={handleInputs} 
+                        />
+                        {errors.image ? <div className={style.errors}>{errors.image}</div> : null}
+                    </div>
+
+                    <div className={style.label_container}>
+                        <label className={style.names}>Released Date: </label>
+                        <input
+                        className={style.inputs_names}
+                        type="date" 
+                        name="released"
+                        value={inputs.released}
+                        onChange={handleInputs} 
                         />
                     </div>
-                   })}
-                </div>
 
-                <button type="submit">Create Videogame</button>
-            </form>
+                    <div className={style.label_container}>
+                        <label className={style.names}>Rating: </label>
+                        <input
+                        className={style.inputs_names}
+                        type="text" 
+                        name="rating"
+                        value={inputs.rating}
+                        onChange={handleInputs} 
+                        />
+                        {errors.rating ? <div className={style.errors}>{errors.rating}</div> : null}
+                    </div>
+
+                    <div className={style.label_container}>
+                        <label className={style.names}>Genres: </label>
+                        <div className={style.container_arrays}>
+                        {allGenres.map((g, index) => {
+                            return <div key={index}>
+                                <label>{g.name} </label>
+                                <input 
+                                    key={g.id} 
+                                    type="checkbox"
+                                    value={g.id}
+                                    name='genres'
+                                    onClick={e => handleChecksGenres(e)}
+                                />
+                            </div>
+                        })} 
+                        </div>
+                        {errors.genres ? <div className={style.errors}>{errors.genres}</div> : null}
+                    </div>
+                    
+                    <div className={style.label_container}>
+                        <label className={style.names}>Platforms: </label>
+                        <div className={style.container_arrays}>
+                        {allPlatforms.map((pt, index) => {
+                            return <div key={index}>
+                                <label>{pt} </label>
+                                <input
+                                    key={index} 
+                                    type="checkbox"
+                                    value={pt}
+                                    name="platforms"
+                                    onClick={e => handleChecksPlatforms(e)}
+                                />
+                            </div>
+                        })}
+                        </div>
+                        {errors.platforms ? <div className={style.errors}>{errors.platforms}</div> : null}
+                    </div>
+
+                    <button type="submit" className={style.button}>Create Videogame</button>
+                </form>
+                <div className={style.back_tohome}>
+                    <NavLink to='/home' className={style.link}>🏠 Home</NavLink>
+                </div>
+            </div>    
         </div>
     )
 };
