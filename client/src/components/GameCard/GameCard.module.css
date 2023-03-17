@@ -2,7 +2,7 @@
   width: 350px;
   height: 300px;
   margin: 3vh;
-  background-color: #5df3b03c;
+  background-color: #0aff913c;
   padding-bottom: 10px;
   box-shadow: 2.5px 3px 2px #ffffff57;
   border: 1px solid #fff;
@@ -34,9 +34,10 @@
 }
 
 .rating {
+  width: 70px;
   position: relative;
-  margin-bottom: -25px;
-  margin-left: 188px;
+  margin-bottom: -35px;
+  margin-left: 268px;
   font-family: "Righteous", cursive;
   color: #f6bc43;
   font-weight: 600;
