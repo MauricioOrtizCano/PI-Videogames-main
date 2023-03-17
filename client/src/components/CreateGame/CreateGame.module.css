@@ -91,6 +91,21 @@
   padding: 10px;
 }
 
+.inputs_description::-webkit-scrollbar {
+  width: 15px;
+}
+
+.inputs_description::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.inputs_description::-webkit-scrollbar-thumb {
+  background-color: #5df3af;
+  border-radius: 20px;
+  border: 3px solid rgb(0, 0, 0);
+}
+
 .container_date_n_rating {
   display: flex;
   gap: 200px;

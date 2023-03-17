@@ -7,9 +7,7 @@ import logoApp from "../MainPage/media/Logo_APP.png";
 const DetailVideogame = () => {
   const gameDetail = useSelector((state) => state.videogameDetail);
   const errors = useSelector((state) => state.error);
-  const id = useSelector((state) => state.getId);
-  console.log(id);
-  console.log(gameDetail);
+  //const id = useSelector((state) => state.getId);
 
   //const transformDescription = gameDetail.description
 
@@ -41,11 +39,20 @@ const DetailVideogame = () => {
           <div className={style.all_genres}>
             <p className={style.subtitle}>Genres</p>
             <div className={style.list}>
-              {gameDetail.genres?.map((g, index) => (
-                <p key={index} className={style.unit}>
-                  {g}
-                </p>
-              ))}
+              {gameDetail.genres?.map((g, index) => {
+                if (g.hasOwnProperty("name")) {
+                  return (
+                    <p key={index} className={style.unit}>
+                      {g.name}
+                    </p>
+                  );
+                }
+                return (
+                  <p key={index} className={style.unit}>
+                    {g}
+                  </p>
+                );
+              })}
             </div>
           </div>
           <div>

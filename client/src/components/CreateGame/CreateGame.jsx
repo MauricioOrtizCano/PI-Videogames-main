@@ -59,7 +59,7 @@ const CreateGame = () => {
 
   const validateInputs = (input) => {
     let error = {};
-    const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
+    const regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/;
 
     if (!input.name) {
       error.name = "The field name is required.";
@@ -158,7 +158,7 @@ const CreateGame = () => {
     if (!inputs.released) {
       inputs.released = Date.now();
     }
-
+    console.log(inputs.genres);
     axios.post("http://localhost:3001/videogames", inputs);
     //dispatch(createVideogame(inputs))
 
@@ -173,6 +173,7 @@ const CreateGame = () => {
     });
 
     alert("The Game has been created successfully");
+    window.location.reload();
   };
 
   return (
