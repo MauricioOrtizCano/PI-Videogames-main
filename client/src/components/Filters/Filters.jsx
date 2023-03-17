@@ -25,7 +25,7 @@ const Filters = ({ filters, setPage, setInput }) => {
       dispatch(sortGamesByName(orderAZ));
     }
     if (e.target.value === "Z-A") {
-      const orderZA = videogames.sort((vg1, vg2) => {
+      const orderZA = filters.sort((vg1, vg2) => {
         if (vg1.name.toLowerCase() > vg2.name.toLowerCase()) return -1;
         else if (vg1.name.toLowerCase() < vg2.name.toLowerCase()) return 1;
         else return 0;
@@ -68,13 +68,13 @@ const Filters = ({ filters, setPage, setInput }) => {
 
   const handlerClickRating = (e) => {
     if (e.target.value === "Minor to Mayor") {
-      const orderUpward = videogames.sort((vg1, vg2) => {
+      const orderUpward = filters.sort((vg1, vg2) => {
         return vg1.rating - vg2.rating;
       });
       dispatch(orderByRating(orderUpward));
     }
     if (e.target.value === "Mayor to Minor") {
-      const orderFalling = videogames.sort((vg1, vg2) => {
+      const orderFalling = filters.sort((vg1, vg2) => {
         return vg2.rating - vg1.rating;
       });
       dispatch(orderByRating(orderFalling));
